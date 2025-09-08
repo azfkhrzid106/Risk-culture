@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\BreakingNews;
 use Illuminate\Http\Request;
@@ -11,47 +12,33 @@ use Inertia\Inertia;
 
 class NewsController extends Controller
 {
+    /**
+     * Tampilkan Dashboard Admin
+     */
     public function index()
     {
         $newsItems = News::orderBy('created_at', 'desc')->get()->map(function ($news) {
-            // DEBUGGING: Check if files exist
-            $imageUrl = null;
-            if ($news->image_path) {
-                // Check if file exists in storage
-                $fileExists = Storage::disk('public')->exists($news->image_path);
-                \Log::info("Image check for {$news->title}: path={$news->image_path}, exists={$fileExists}");
-                
-                if ($fileExists) {
-                    // Try multiple URL generation methods
-                    $imageUrl = asset('storage/' . $news->image_path);
-                    // Alternative: $imageUrl = Storage::disk('public')->url($news->image_path);
-                    
-                    \Log::info("Generated URL: {$imageUrl}");
-                }
-            }
-
             return [
                 'id' => $news->id,
                 'title' => $news->title,
                 'content' => $news->content,
                 'category' => $news->category,
                 'is_active' => $news->is_active,
-                'image_url' => $imageUrl,
-                'image_path' => $news->image_path, // Keep for debugging
+                'image_url' => $news->image_path ? Storage::url($news->image_path) : null,
                 'created_at' => $news->created_at,
                 'updated_at' => $news->updated_at,
             ];
         });
 
-        // Debug log
-        \Log::info('NewsItems sent to frontend:', $newsItems->toArray());
-
         return Inertia::render('Admin/Dashboard', [
             'newsItems' => $newsItems,
-            'breakingNews' => BreakingNews::first() ?? ['title' => '', 'isActive' => false]
+            'breakingNews' => BreakingNews::first() ?? ['title' => '', 'is_active' => false]
         ]);
     }
 
+    /**
+     * Simpan berita baru
+     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -69,25 +56,19 @@ class NewsController extends Controller
             'is_active' => $validated['is_active'],
         ];
 
-        // Handle file upload
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-            $imagePath = $image->storeAs('news-images', $filename, 'public');
-            $data['image_path'] = $imagePath;
-            
-            // Debug log
-            \Log::info('Image stored at: ' . $imagePath);
+            $filename = time() . '_' . Str::random(8) . '.' . $request->file('image')->getClientOriginalExtension();
+            $data['image_path'] = $request->file('image')->storeAs('news-images', $filename, 'public');
         }
 
-        $news = News::create($data);
-        
-        // Debug log
-        \Log::info('News created with image_path: ' . $news->image_path);
+        News::create($data);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Informasi berhasil ditambahkan!');
+        return redirect()->route('admin.dashboard')->with('success', 'Berita berhasil ditambahkan!');
     }
 
+    /**
+     * Update berita
+     */
     public function update(Request $request, News $news)
     {
         $validated = $request->validate([
@@ -105,50 +86,31 @@ class NewsController extends Controller
             'is_active' => $validated['is_active'],
         ];
 
-        // Handle file upload
         if ($request->hasFile('image')) {
-            // Delete old image if exists
             if ($news->image_path && Storage::disk('public')->exists($news->image_path)) {
                 Storage::disk('public')->delete($news->image_path);
             }
 
-            $image = $request->file('image');
-            $filename = time() . '_' . Str::random(10) . '.' . $image->getClientOriginalExtension();
-            $imagePath = $image->storeAs('news-images', $filename, 'public');
-            $data['image_path'] = $imagePath;
+            $filename = time() . '_' . Str::random(8) . '.' . $request->file('image')->getClientOriginalExtension();
+            $data['image_path'] = $request->file('image')->storeAs('news-images', $filename, 'public');
         }
 
         $news->update($data);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Informasi berhasil diupdate!');
+        return redirect()->route('admin.dashboard')->with('success', 'Berita berhasil diperbarui!');
     }
 
+    /**
+     * Hapus berita
+     */
     public function destroy(News $news)
     {
-        // Delete image if exists
         if ($news->image_path && Storage::disk('public')->exists($news->image_path)) {
             Storage::disk('public')->delete($news->image_path);
         }
 
         $news->delete();
 
-        return redirect()->route('admin.dashboard')->with('success', 'Informasi berhasil dihapus!');
-    }
-
-    public function updateBreaking(Request $request)
-    {
-        $validated = $request->validate([
-            'title' => 'nullable|string|max:255',
-            'isActive' => 'required|boolean'
-        ]);
-
-        $breakingNews = BreakingNews::first();
-        if ($breakingNews) {
-            $breakingNews->update($validated);
-        } else {
-            BreakingNews::create($validated);
-        }
-
-        return redirect()->route('admin.dashboard')->with('success', 'Breaking News diperbarui!');
+        return redirect()->route('admin.dashboard')->with('success', 'Berita berhasil dihapus!');
     }
 }

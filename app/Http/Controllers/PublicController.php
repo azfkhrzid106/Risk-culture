@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
-use App\Models\BreakingNews;
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
-use App\Models\File;
 
-class WelcomeController extends Controller
+class PublicController extends Controller
 {
-    public function index()
+    public function galeri()
     {
         // Ensure storage link exists
         if (!file_exists(public_path('storage'))) {
@@ -19,17 +16,15 @@ class WelcomeController extends Controller
 
         $newsItems = News::where('is_active', true)
             ->latest()
-            ->paginate(6)
+            ->paginate(12) // Bisa disesuaikan
             ->map(function ($news) {
                 $imageUrl = null;
-                
+
                 if ($news->image_path) {
                     $fileExists = Storage::disk('public')->exists($news->image_path);
-                    \Log::info("Welcome - Image check for {$news->title}: path={$news->image_path}, exists={$fileExists}");
-                    
+
                     if ($fileExists) {
                         $imageUrl = asset('storage/' . $news->image_path);
-                        \Log::info("Welcome - Generated URL: {$imageUrl}");
                     }
                 }
 
@@ -45,20 +40,8 @@ class WelcomeController extends Controller
                 ];
             });
 
-        $breakingNews = BreakingNews::first();
-        if (!$breakingNews) {
-            $breakingNews = (object) ['title' => '', 'isActive' => false];
-        }
-
-        \Log::info('Welcome data:', [
-            'newsCount' => $newsItems->count(),
-            'newsWithImages' => $newsItems->where('image_url', '!=', null)->count(),
-            'firstNewsImageUrl' => $newsItems->first()['image_url'] ?? 'none'
-        ]);
-
-        return Inertia::render('Welcome', [
-            'newsItems' => $newsItems,
-            'breakingNews' => $breakingNews
+        return inertia('Galeri', [
+            'newsItems' => $newsItems
         ]);
     }
 }

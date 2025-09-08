@@ -7,7 +7,11 @@
     <!-- Tambahkan CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    <!-- ✅ Title Website -->
+    <title inertia>{{ config('app.name', 'NamaWebKamu') }}</title>
+
+    <!-- ✅ Tambahkan Favicon -->
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
