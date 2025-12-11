@@ -15,7 +15,7 @@
           <span class="text-yellow-400">Download</span> Center
         </h1>
         <p class="text-xl md:text-2xl mb-8 animate-fade-in-up opacity-90" style="animation-delay: 0.3s">
-          Unduh dokumen, panduan, dan file penting sistem K3 INALUM
+          Unduh dokumen, panduan, dan file penting sistem SRM INALUM
         </p>
         <div class="w-24 h-1 bg-yellow-400 mx-auto animate-scale-in" style="animation-delay: 0.6s"></div>
       </div>

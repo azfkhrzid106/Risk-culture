@@ -47,8 +47,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Keselamatan Kerja</h3>
-              <p class="text-gray-600 leading-relaxed">Prioritas utama dalam setiap aktivitas</p>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Management Risiko</h3>
+              <p class="text-gray-600 leading-relaxed"></p>
             </div>
             
             <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -57,8 +57,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Kesehatan Kerja</h3>
-              <p class="text-gray-600 leading-relaxed">Menjaga kesehatan pekerja secara berkelanjutan</p>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Top Risk Perusahaan</h3>
+              <p class="text-gray-600 leading-relaxed"></p>
             </div>
             
             <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 sm:col-span-2 lg:col-span-1">
@@ -68,7 +68,7 @@
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-4">Risk Culture</h3>
-              <p class="text-gray-600 leading-relaxed">Budaya keselamatan yang terintegrasi</p>
+              <p class="text-gray-600 leading-relaxed"></p>
             </div>
           </div>
         </div>

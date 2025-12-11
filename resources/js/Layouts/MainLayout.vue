@@ -11,8 +11,8 @@
     <div class="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-white/15 backdrop-blur-sm">
       <img src="/images/logo.png"  alt="Logo SRM" class="w-full h-full object-contain" />
     </div>
-    <span class="hidden sm:inline">SMELTER<span class="text-cyan-200"> RISK MANAGEMENT</span></span>
-    <span class="sm:hidden">SMELTER<span class="text-cyan-200"> RISK MANAGEMENT</span></span>
+    <span class="hidden sm:inline">RISK<span class="text-cyan-200"> CULTURE</span></span>
+    <span class="sm:hidden">RISK<span class="text-cyan-200"> CULTURE</span></span>
   </div>
 </div>
 
@@ -33,24 +33,18 @@
               <!-- Dropdown -->
               <div class="relative group flex-shrink-0">
                 <span class="hover:text-cyan-200 hover:bg-white/10 cursor-pointer transition-all duration-200 px-3 py-2.5 whitespace-nowrap border-b-2 border-transparent hover:border-cyan-200/50 flex items-center gap-1 rounded-t-xl">
-                  Safety Obs 
+                  Form TMRD 
                   <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                   </svg>
                 </span>
                 <div class="absolute z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                   <div class="bg-white text-gray-700 rounded-2xl shadow-2xl mt-2 w-52 py-3 right-0 border border-sky-100">
-                    <Link href="/observation/form" class="flex items-center gap-3 px-5 py-3 text-sm hover:bg-sky-50 hover:text-sky-700 transition-colors rounded-xl mx-2">
+                    <Link href="/TMRD" class="flex items-center gap-3 px-5 py-3 text-sm hover:bg-sky-50 hover:text-sky-700 transition-colors rounded-xl mx-2">
                       <svg class="w-4 h-4 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                       </svg>
-                      Form Observatio
-                    </Link>
-                    <Link href="/observation/report" class="flex items-center gap-3 px-5 py-3 text-sm hover:bg-sky-50 hover:text-sky-700 transition-colors rounded-xl mx-2">
-                      <svg class="w-4 h-4 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                      </svg>
-                      Report Observation
+                      Form TMRD
                     </Link>
                   </div>
                 </div>
@@ -72,7 +66,7 @@
             <Link href="/login"
               class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-sky-400 text-sky-900 px-4 py-2 text-sm rounded-xl hover:from-cyan-300 hover:to-sky-300 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3v1"/>
               </svg>
               <span class="hidden lg:inline">Login</span>
             </Link>
@@ -98,7 +92,7 @@
           <!-- Mobile Header -->
           <div class="flex items-center justify-between p-6 border-b border-sky-200 bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-500 text-white">
             <div class="font-bold text-lg">
-              SMELTER<span class="text-cyan-200"> RISK MANAGEMENT</span>
+              RISK<span class="text-cyan-200"> CULTURE</span>
             </div>
             <button @click="toggleMobileMenu" class="p-2 hover:bg-white/15 rounded-xl transition-colors">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,34 +121,24 @@
                 </Link>
               </div>
               
-              <!-- Safety Observation Section -->
+              <!-- Form TMRD Section -->
               <div class="pt-6 border-t border-sky-200">
                 <div class="flex items-center gap-2 font-semibold text-sky-800 mb-4">
                   <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
-                  Safety Observation
+                  Form TMRD
                 </div>
                 <div class="space-y-2 ml-7">
-                  <Link href="/observation/form" 
+                  <Link href="/TMRD" 
                     :class="[
-                      isActiveRoute('/observation/form') 
+                      isActiveRoute('/TMRD') 
                         ? 'bg-sky-100 text-sky-700 font-semibold shadow-sm' 
                         : 'text-sky-700 hover:bg-sky-50',
                       'block p-3 text-sm rounded-xl transition-colors font-medium'
                     ]" 
                     @click="closeMenu">
-                    Form Observation
-                  </Link>
-                  <Link href="/observation/report" 
-                    :class="[
-                      isActiveRoute('/observation/report') 
-                        ? 'bg-sky-100 text-sky-700 font-semibold shadow-sm' 
-                        : 'text-sky-700 hover:bg-sky-50',
-                      'block p-3 text-sm rounded-xl transition-colors font-medium'
-                    ]" 
-                    @click="closeMenu">
-                    Report Observation
+                    Form TMRD
                   </Link>
                 </div>
               </div>
@@ -170,7 +154,7 @@
               class="flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-6 py-3 rounded-xl hover:from-sky-600 hover:to-cyan-600 text-sm transition-all duration-200 shadow-lg font-medium"
               @click="closeMenu">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3v1"/>
               </svg>
               Login ke Sistem
             </Link>
@@ -200,7 +184,7 @@
             <img src="/images/logo.png" alt="Logo SRM" class="w-full h-full object-contain" />
           </div>
           <span class="font-bold text-lg">
-          SMELTER<span class="text-cyan-300"> RISK-MANAGEMENT</span>
+          RISK<span class="text-cyan-300"> CULTURE</span>
           </span>
         </div>
 
@@ -245,7 +229,7 @@
         
         <!-- Copyright -->
         <div class="border-t border-gray-600 mt-8 pt-6 text-center text-sm text-gray-400">
-          <p>&copy; 2025 K3-INALUM — Platform Yang Mengintegrasikan Pemantauan Risiko. Semua Hak Dilindungi.</p>
+          <p>&copy; 2025 SRM-INALUM — Platform Yang Mengintegrasikan Pemantauan Risiko. Semua Hak Dilindungi.</p>
         </div>
       </div>
     </footer>

@@ -36,7 +36,7 @@
             </div>
             <p class="text-gray-600 leading-relaxed text-lg">
               Smelter Risk Management (SRM) adalah platform yang mengintegrasikan pemantauan risiko, pelaporan insiden,
-              dan edukasi K3 secara digital. Sistem ini membantu memastikan lingkungan kerja yang aman, produktif, dan
+              dan edukasi Risiko secara digital. Sistem ini membantu memastikan lingkungan kerja yang aman, produktif, dan
               sesuai regulasi keselamatan dengan teknologi terdepan dan pendekatan yang komprehensif.
             </p>
           </div>
@@ -85,15 +85,15 @@
             <ul class="space-y-4 text-gray-700">
               <li class="flex items-start text-lg">
                 <span class="w-2 h-2 bg-green-500 rounded-full mr-3 mt-3 flex-shrink-0"></span>
-                <span>Meningkatkan kesadaran K3 di kalangan pekerja melalui edukasi berkelanjutan</span>
+                <span>Mengidentifikasi dan menganalisis risiko yang dapat memengaruhi pencapaian tujuan organisasi di seluruh tingkat kegiatan dan proses bisnis.</span>
               </li>
               <li class="flex items-start text-lg">
                 <span class="w-2 h-2 bg-green-500 rounded-full mr-3 mt-3 flex-shrink-0"></span>
-                <span>Meminimalkan risiko kecelakaan melalui pemantauan terpadu dan real-time</span>
+                <span>Mengembangkan kebijakan, prosedur, dan kerangka kerja manajemen risiko yang selaras dengan strategi dan tata kelola organisasi.</span>
               </li>
               <li class="flex items-start text-lg">
                 <span class="w-2 h-2 bg-green-500 rounded-full mr-3 mt-3 flex-shrink-0"></span>
-                <span>Menyediakan data akurat dan analytics untuk pengambilan keputusan strategis</span>
+                <span>Melakukan pemantauan dan evaluasi berkala terhadap profil risiko, efektivitas pengendalian, serta kepatuhan terhadap peraturan dan kebijakan internal.</span>
               </li>
             </ul>
           </div>
@@ -105,7 +105,7 @@
     <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div class="container mx-auto px-6">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-gray-800 mb-4 animate-slide-in-up">Statistik K3</h2>
+          <h2 class="text-4xl font-bold text-gray-800 mb-4 animate-slide-in-up">Statistik Risiko</h2>
           <p class="text-xl text-gray-600 animate-slide-in-up" style="animation-delay: 0.2s">
             Capaian dan kinerja sistem manajemen risiko kami
           </p>
@@ -121,7 +121,7 @@
             </div>
             <p class="text-6xl font-bold text-blue-600 mb-4 counter-number">{{ counters.pekerja.toLocaleString() }}</p>
             <p class="text-gray-600 font-semibold text-lg">Pekerja Terlibat</p>
-            <p class="text-gray-500 text-sm mt-2">Aktif dalam program K3</p>
+            <p class="text-gray-500 text-sm mt-2">Aktif dalam program Risk Culture</p>
           </div>
 
           <!-- Incidents Statistics -->
@@ -144,7 +144,7 @@
               </svg>
             </div>
             <p class="text-6xl font-bold text-yellow-600 mb-4 counter-number">{{ counters.pelatihan.toLocaleString() }}</p>
-            <p class="text-gray-600 font-semibold text-lg">Pelatihan K3</p>
+            <p class="text-gray-600 font-semibold text-lg">Sosialisasi Risk Management</p>
             <p class="text-gray-500 text-sm mt-2">Program edukasi berkualitas</p>
           </div>
         </div>

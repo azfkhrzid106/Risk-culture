@@ -11,7 +11,7 @@
             </svg>
           </div>
           <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            K3-inalum
+            Risk Culture-inalum
           </h2>
           <p class="text-sm text-gray-500 mt-1">Admin Panel Login</p>
         </div>
@@ -114,26 +114,6 @@
             </div>
           </div>
 
-          <!-- Remember Me -->
-          <div class="flex items-center justify-between">
-            <label class="flex items-center cursor-pointer">
-              <div class="relative">
-                <input 
-                  v-model="form.remember" 
-                  type="checkbox" 
-                  class="sr-only"
-                />
-                <div class="w-5 h-5 border-2 border-gray-300 rounded transition-colors" :class="form.remember ? 'bg-blue-600 border-blue-600' : 'bg-white'">
-                  <svg v-if="form.remember" class="w-3 h-3 text-white absolute top-0.5 left-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                  </svg>
-                </div>
-              </div>
-              <span class="ml-3 text-sm text-gray-700 font-medium">Ingat saya</span>
-            </label>
-
-          </div>
-
           <!-- Submit Button -->
           <div class="pt-2">
             <button 
@@ -188,8 +168,7 @@ import { computed, ref } from 'vue';
 
 const form = useForm({
   email: '',
-  password: '',
-  remember: false
+  password: ''
 });
 
 const showPassword = ref(false);

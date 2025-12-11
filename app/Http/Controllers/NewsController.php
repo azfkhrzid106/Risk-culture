@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\BreakingNews;
+use App\Models\Document; // Tambahkan import ini
+use App\Models\Tmrd; // Tambahkan import ini jika ada model TMRD
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -24,14 +26,28 @@ class NewsController extends Controller
                 'content' => $news->content,
                 'category' => $news->category,
                 'is_active' => $news->is_active,
-                'image_url' => $news->image_path ? Storage::url($news->image_path) : null,
                 'created_at' => $news->created_at,
                 'updated_at' => $news->updated_at,
             ];
         });
 
-        return Inertia::render('Admin/Dashboard', [
+        // Ambil data documents jika model ada
+        $documents = [];
+        if (class_exists('App\Models\Document')) {
+            $documents = Document::orderBy('created_at', 'desc')->get()->toArray();
+        }
+
+        // Ambil data TMRD jika model ada
+        $tmrdItems = [];
+        if (class_exists('App\Models\Tmrd')) {
+            $tmrdItems = Tmrd::orderBy('created_at', 'desc')->get()->toArray();
+        }
+
+        // Perbaiki path render - sesuaikan dengan struktur folder Anda
+        return Inertia::render('Dashboard', [ // Ubah dari 'Admin/Dashboard' ke 'Dashboard'
             'newsItems' => $newsItems,
+            'documents' => $documents,
+            'tmrdItems' => $tmrdItems,
             'breakingNews' => BreakingNews::first() ?? ['title' => '', 'is_active' => false]
         ]);
     }
@@ -63,7 +79,7 @@ class NewsController extends Controller
 
         News::create($data);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Berita berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Berita berhasil ditambahkan!');
     }
 
     /**
@@ -97,7 +113,7 @@ class NewsController extends Controller
 
         $news->update($data);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Berita berhasil diperbarui!');
+        return redirect()->back()->with('success', 'Berita berhasil diperbarui!');
     }
 
     /**
@@ -111,6 +127,6 @@ class NewsController extends Controller
 
         $news->delete();
 
-        return redirect()->route('admin.dashboard')->with('success', 'Berita berhasil dihapus!');
+        return redirect()->back()->with('success', 'Berita berhasil dihapus!');
     }
 }

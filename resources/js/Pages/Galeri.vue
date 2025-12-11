@@ -15,7 +15,7 @@
           Galeri <span class="text-yellow-400">Foto</span>
         </h1>
         <p class="text-xl md:text-2xl mb-8 animate-fade-in-up opacity-90" style="animation-delay: 0.3s">
-          Dokumentasi Kegiatan Keselamatan dan Kesehatan Kerja PT Indonesia Asahan Aluminium
+          Dokumentasi Kegiatan Smelter Risk Management PT Indonesia Asahan Aluminium
         </p>
         <div class="w-24 h-1 bg-yellow-400 mx-auto animate-scale-in" style="animation-delay: 0.6s"></div>
       </div>
@@ -43,7 +43,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">K3</h3>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">SRM</h3>
             <p class="text-gray-600">Kategori Utama</p>
           </div>
 
@@ -67,7 +67,7 @@
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold text-gray-800 mb-4 animate-slide-in-up">Koleksi Dokumentasi</h2>
           <p class="text-xl text-gray-600 animate-slide-in-up" style="animation-delay: 0.2s">
-            Lihat berbagai kegiatan dan implementasi sistem K3 di lapangan
+            Lihat berbagai kegiatan dan implementasi sistem SRM 
           </p>
         </div>
 
@@ -121,7 +121,7 @@
           </div>
           <h3 class="text-2xl font-bold text-gray-800 mb-4">Belum Ada Foto</h3>
           <p class="text-gray-600 max-w-md mx-auto">
-            Dokumentasi foto kegiatan K3 akan segera ditambahkan. Pantau terus halaman ini untuk update terbaru.
+            Dokumentasi foto kegiatan SRM akan segera ditambahkan. Pantau terus halaman ini untuk update terbaru.
           </p>
         </div>
       </div>
@@ -160,7 +160,7 @@
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
-                <span>Dokumentasi Kegiatan K3</span>
+                <span>Dokumentasi Kegiatan SRM</span>
               </div>
             </div>
           </div>
